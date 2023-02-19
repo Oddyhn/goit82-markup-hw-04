@@ -5,6 +5,8 @@
 	--smlatter-color: #434455;
 	--active-color: #404bbf;
 
+	--ico-color: #8e8f99;
+	--ico-bgrd-spec: #31d0aa;
 	--ltdecor-color: #e7e9fc;
 	--decor-color: #4d5ae5;
 	--lightfon-color: #f4f4fd;
@@ -47,6 +49,7 @@ ol {
 
 a {
 	text-decoration: none;
+	color: inherit;
 }
 
 .container {
@@ -84,16 +87,13 @@ body {
 	background-color: var(--background-color);
 }
 
-.hero {
+.hero,
+.footer-style {
 	background-color: var(--bglatter-color);
 }
 
 .employer {
 	background-color: var(--lightfon-color);
-}
-
-.footer-style {
-	background-color: var(--bglatter-color);
 }
 
 /* Header */
@@ -188,12 +188,17 @@ body {
 /* Footer */
 /* Address */
 
-.section-footer {
+.footer-box {
+	display: flex;
 	padding: 100px 15px;
 }
 
+.section-footer {
+	display: inline-block;
+	margin-right: 120px;
+}
+
 .section-footer .logo-style {
-	margin: 0;
 	color: var(--lightfon-color);
 	line-height: 1.17;
 }
@@ -213,11 +218,48 @@ body {
 	color: var(--active-color);
 }
 
+.social {
+	width: 208px;
+}
+
+.social > h3 {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.5;
+
+	color: var(--background-color);
+}
+
+.social > .media-list {
+	margin-top: 16px;
+}
+
+.social > .media-list > li > a {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social > .media-list > li > a > .media-icon {
+	width: 24px;
+	height: 24px;
+}
+
+.social > .media-list > li > a:is(:hover, :focus) {
+	background-color: var(--ico-bgrd-spec);
+}
+
 /* Studio */
 /* Hero */
 
 .hero {
 	padding: 188px 0;
+
+	max-width: 1440px;
+	margin: 0 auto;
+	background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+		url(../image/studio/hero-bgrd.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 
 .section-hero {
@@ -271,10 +313,31 @@ body {
 
 .principles-list {
 	display: flex;
+	justify-content: center;
 }
 
 .prinsiples-item {
+	display: flex;
+	flex-direction: column;
+	width: 264px;
 	margin-right: 24px;
+}
+
+.prinsiples-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 112px;
+	margin-bottom: 8px;
+
+	background: var(--lightfon-color);
+	border-radius: 4px;
+}
+
+.prinsiples-icon {
+	display: flex;
+	width: 64px;
+	height: 64px;
 }
 
 .prinsiples-item:last-child {
@@ -306,6 +369,7 @@ body {
 
 .product-list {
 	display: flex;
+	justify-content: center;
 }
 
 .product-item {
@@ -317,7 +381,8 @@ body {
 }
 
 .product-title,
-.employer-title {
+.employer-title,
+.customer-title {
 	margin-bottom: 72px;
 
 	font-weight: 700;
@@ -338,10 +403,11 @@ body {
 }
 
 /* Studio */
-/* employer */
+/* Employer */
 
 .employer-list {
 	display: flex;
+	justify-content: center;
 }
 
 .employer-item {
@@ -360,6 +426,73 @@ body {
 
 .employer-content {
 	margin: 32px 16px;
+}
+
+.media-list {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 8px;
+}
+
+.media-link {
+	display: inline-block;
+}
+
+.media-style {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: var(--decor-color);
+}
+
+.media-icon {
+	display: flex;
+	width: 16px;
+	height: 16px;
+	color: currentColor;
+}
+
+.media-style:hover,
+.media-style:focus {
+	background-color: var(--active-color);
+}
+
+/* Studio */
+/* Customers */
+
+.customer-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.customer-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 168px;
+	height: 88px;
+
+	border: 1px solid var(--ico-color);
+	border-radius: 3px;
+}
+
+.customer-link:is(:hover, :focus) {
+	border: 1px solid var(--active-color);
+}
+
+.customer-icon {
+	display: flex;
+	width: 104px;
+	height: 56px;
+	fill: var(--ico-color);
+}
+
+.customer-icon:is(:hover, :focus) {
+	fill: var(--active-color);
 }
 
 /* Portfolio */
@@ -428,6 +561,10 @@ body {
 	flex-wrap: wrap;
 }
 
+.project-link {
+	display: inline-block;
+}
+
 .project-item {
 	width: calc((100% - 48px) / 3);
 	margin-right: 24px;
@@ -459,4 +596,10 @@ body {
 
 .project-name {
 	margin-left: 16px;
+}
+
+.project-item:hover,
+.project-item:focus {
+	border: 1px solid var(--lightfon-color);
+	box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
